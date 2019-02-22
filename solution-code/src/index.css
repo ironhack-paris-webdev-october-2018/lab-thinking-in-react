@@ -7,3 +7,13 @@ body {
 label {
   display: block;
 }
+
+body,
+.table th,
+.table td {
+  text-align: center;
+}
+
+.table th {
+  background-color: #e7ecef;
+}

@@ -27,7 +27,7 @@ class ProductTable extends Component {
             products.
           </p>
         ) : (
-          <table>
+          <table className="table is-fullwidth">
             <thead>
               <tr>
                 <th>Name</th>

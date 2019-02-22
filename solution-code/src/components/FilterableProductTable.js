@@ -28,7 +28,7 @@ class FilterableProductTable extends Component {
     const { products } = this.props;
     return (
       <section className="FilterableProductTable">
-        <h1>IronStore</h1>
+        <h1 className="title">IronStore</h1>
 
         <SearchBar
           search={this.state.productSearch}

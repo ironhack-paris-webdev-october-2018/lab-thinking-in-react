@@ -17,7 +17,12 @@ class SearchBar extends Component {
         </label>
 
         <label>
-          <input name="showInStock" type="checkbox" />
+          <input
+            onChange={event => this.props.inStockChange(event)}
+            checked={this.props.inStock}
+            name="showInStock"
+            type="checkbox"
+          />
           Only show products in stock
         </label>
       </section>

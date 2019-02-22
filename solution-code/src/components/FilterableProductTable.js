@@ -9,13 +9,19 @@ class FilterableProductTable extends Component {
     super(props);
 
     this.state = {
-      productSearch: ""
+      productSearch: "",
+      showInStock: false
     };
   }
 
   genericOnChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+  }
+
+  checkboxOnChange(event) {
+    const { name, checked } = event.target;
+    this.setState({ [name]: checked });
   }
 
   render() {
@@ -27,9 +33,12 @@ class FilterableProductTable extends Component {
         <SearchBar
           search={this.state.productSearch}
           searchChange={event => this.genericOnChange(event)}
+          inStock={this.state.showInStock}
+          inStockChange={event => this.checkboxOnChange(event)}
         />
         <ProductTable
           filterText={this.state.productSearch}
+          inStockOnly={this.state.showInStock}
           productArray={products.data}
         />
       </section>

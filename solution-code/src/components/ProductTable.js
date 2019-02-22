@@ -5,13 +5,19 @@ import ProductRow from "./ProductRow";
 
 class ProductTable extends Component {
   render() {
-    const { productArray, filterText } = this.props;
+    const { productArray, filterText, inStockOnly } = this.props;
     const lowerFilter = filterText.toLowerCase();
 
-    const filteredArray = productArray.filter(oneProduct => {
+    let filteredArray = productArray.filter(oneProduct => {
       const lowerName = oneProduct.name.toLowerCase();
       return lowerName.includes(lowerFilter);
     });
+
+    if (inStockOnly) {
+      filteredArray = filteredArray.filter(oneProduct => {
+        return oneProduct.stocked;
+      });
+    }
 
     return (
       <section className="ProductTable">

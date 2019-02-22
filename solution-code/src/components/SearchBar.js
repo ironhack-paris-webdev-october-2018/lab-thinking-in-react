@@ -8,7 +8,12 @@ class SearchBar extends Component {
       <section className="SearchBar">
         <label>
           <h2>Search</h2>
-          <input name="productSearch" type="search" />
+          <input
+            onChange={event => this.props.searchChange(event)}
+            value={this.props.search}
+            name="productSearch"
+            type="search"
+          />
         </label>
 
         <label>
